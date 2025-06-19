@@ -27,4 +27,5 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   max-width: 1240px;
   margin: auto;
+  height: 100vh;
 }

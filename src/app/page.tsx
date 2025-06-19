@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardAction,
@@ -7,15 +8,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Link, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(true);
+  }, []);
+
   return (
-    <div className="w-full flex items-center justify-center p-8">
-      <main className="flex flex-col md:flex-row items-center justify-center w-full h-full gap-12 ">
+    <div className="w-full flex items-center justify-center p-8 ">
+      <main
+        className={`flex flex-col md:flex-row items-center justify-center w-full h-full gap-12 transition-opacity duration-1000 ${
+          show ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <Card className="min-w-76 flex flex-col justify-around max-h-[800px] bg-[url('/background-card.png')] bg-no-repeat bg-cover bg-bottom border-0 shadow-xl color-background">
           <CardHeader className="flex flex-col items-center justify-center">
             <Image
@@ -79,12 +90,21 @@ export default function Home() {
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mt-4 text-justify">
             Sou um desenvolvedor FullStack apaixonado por criar soluções
-            escaláveis e de alto desempenho. Tenho sólida experiência em React e
-            Node.js, além de conhecimentos em bancos de dados SQL e NoSQL, e
-            arquitetura de microsserviços. Trabalho com metodologias ágeis e
-            possuo forte capacidade de colaborar de forma eficiente em equipes
-            dinâmicas.
+            escaláveis e de alto desempenho. Tenho sólida experiência em React,
+            React Native e Node.js, além de conhecimentos em bancos de dados.
+            Trabalho com metodologias ágeis e possuo forte capacidade de
+            colaborar de forma eficiente em equipes dinâmicas.
           </p>
+          <div className="flex gap-8 mt-8">
+            <div>
+              <h3 className="text-4xl font-bold">+2</h3>
+              <p>Anos de experiência</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold">+40</h3>
+              <p>Projetos no GitHub</p>
+            </div>
+          </div>
         </div>
       </main>
     </div>
