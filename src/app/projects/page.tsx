@@ -1,6 +1,8 @@
 "use client";
 
+import { Card } from "@/components/ui/card";
 import React, { useEffect, useState } from "react";
+import CardProjects from "../components/cardProjects";
 
 const Projects = () => {
   const [show, setShow] = useState(false);
@@ -9,16 +11,69 @@ const Projects = () => {
     setShow(true);
   }, []);
 
+  if (!show) return null;
+
   return (
     <div className="w-full flex items-center justify-center p-8 ">
       <main
-        className={`flex flex-col md:flex-row items-center justify-center w-full h-full gap-12 transition-opacity duration-1000 ${
+        className={`flex flex-col  items-center justify-center  w-full h-full gap-12 transition-opacity duration-1000 ${
           show ? "opacity-100" : "opacity-0"
         }`}
       >
         <h1 className="text-[70px] text-center font-extrabold leading-none">
-          MEUS <span className="text-gray-500">PROJETOS</span>{" "}
+          PROJETOS EM <span className="text-gray-500">DESTAQUE</span>{" "}
         </h1>
+
+        <div>
+          <CardProjects
+            link=""
+            id="1"
+            image="/projects/smart-mini-mercado.png"
+            title="Smart Minimercado"
+            description="Projeto FullStack onde criei  do zero um app com React Native, um app web para o adminstrador com NextJs e uma Api com Express"
+            technology={[
+              "TypeScript",
+              "Node",
+              "Tailwind",
+              "React",
+              "Next.js",
+              "Express",
+              "PostgreSql",
+            ]}
+          />
+          <CardProjects
+            link=""
+            id="1"
+            image="/projects/playnee.png"
+            title="Playnee - CRM"
+            description="Trabalho atualmente com manutenção de um CRM onde desenvolvo diariamente novas features de um Sistema Web, e um App criado com React Native"
+            technology={[
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "Node",
+              "PostgreSql",
+              "Bootstrap",
+              "AdonisJs",
+            ]}
+          />
+          <CardProjects
+            link=""
+            id="1"
+            image="/projects/tinbolt.png"
+            title="Tinbolt - Plantaforma Educacional "
+            description="Projeto FullStack onde criei  do zero um app com React Native, crio novas features diariamente em um aplicativo web e manutenção no back-end criado com AdonisJS"
+            technology={[
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "Node",
+              "PostgreSql",
+              "Bootstrap",
+              "AdonisJs",
+            ]}
+          />
+        </div>
       </main>
     </div>
   );

@@ -29,7 +29,7 @@ const Experience = () => {
             <ul className="text-lg list-disc list-inside space-y-2 pl-2">
               <li>
                 Desenvolvedor Fullstack na Empresa Growbit{" "}
-                <span className="text-gray-500">(2025 - Presente)</span>
+                <span className="text-gray-500">(2024 - Emprego Atual)</span>
               </li>
               <li>
                 Professor na Empresa Bom Jesus{" "}
