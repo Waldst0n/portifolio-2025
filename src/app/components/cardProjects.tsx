@@ -10,13 +10,7 @@ import {
   SiJavascript,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
 import { CardProjectsProps } from "@/types/types";
 
 import Image from "next/image";
