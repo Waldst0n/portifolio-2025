@@ -1,12 +1,6 @@
 import { projetos } from "@/app/utils/projectsData";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function Page({ params }: Props) {
+export default function Page({ params }: { params: { id: string } }) {
   const projeto = projetos.find((p) => p.id === params.id);
 
   if (!projeto) {
