@@ -18,7 +18,3 @@ export const projetos = [
     description: "Projeto FullStack onde criei do zero um app...",
   },
 ];
-
-export function getProjetoById(id: string) {
-  return projetos.find((p) => p.id === id);
-}
