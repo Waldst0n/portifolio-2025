@@ -3,8 +3,6 @@ import { getProjetoById } from "@/app/utils/projectsData";
 import { PageDetailsProps } from "@/types/types";
 
 const page = ({ params }: PageDetailsProps) => {
-  const { id } = params;
-
   const projeto = getProjetoById(params.id);
 
   if (!projeto) return <div>Projeto não encontrado!</div>;
