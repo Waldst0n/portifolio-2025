@@ -1,5 +1,4 @@
 import { projetos } from "@/app/utils/projectsData";
-import { type Metadata } from "next";
 
 type Props = {
   params: {
