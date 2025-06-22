@@ -1,9 +1,10 @@
-import React from "react";
-import { getProjetoById } from "@/app/utils/projectsData";
+import { projetos } from "@/app/utils/projectsData";
 
-// você não precisa da interface PageDetailsProps aqui
+function getProjetoById(id: string) {
+  return projetos.find((p) => p.id === id);
+}
 
-const Page = ({ params }: { params: { id: string } }) => {
+export default async function Page({ params }: { params: { id: string } }) {
   const projeto = getProjetoById(params.id);
 
   if (!projeto) return <div>Projeto não encontrado!</div>;
@@ -17,6 +18,4 @@ const Page = ({ params }: { params: { id: string } }) => {
       </main>
     </div>
   );
-};
-
-export default Page;
+}
