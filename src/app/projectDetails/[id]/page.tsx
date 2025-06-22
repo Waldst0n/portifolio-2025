@@ -1,7 +1,11 @@
 import React from "react";
 import { getProjetoById } from "@/app/utils/projectsData";
-import { PageDetailsProps } from "@/types/types";
 
+export interface PageDetailsProps {
+  params: {
+    id: string;
+  };
+}
 const Page = ({ params }: PageDetailsProps) => {
   const projeto = getProjetoById(params.id);
 

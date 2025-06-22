@@ -6,9 +6,3 @@ export type CardProjectsProps = {
   link?: string;
   id: string;
 };
-
-export interface PageDetailsProps {
-  params: {
-    id: string;
-  };
-}
