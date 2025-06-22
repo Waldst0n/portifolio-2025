@@ -19,13 +19,12 @@ const Projects = () => {
           show ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h1 className="text-[70px] text-center font-extrabold leading-none">
+        <h1 className="text-4xl md:text-[70px] text-center font-extrabold leading-none">
           PROJETOS EM <span className="text-gray-500">DESTAQUE</span>{" "}
         </h1>
 
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-screen-xl">
           <CardProjects
-            link=""
             id="1"
             image="/projects/smart-mini-mercado.png"
             title="Smart Minimercado"
@@ -42,7 +41,7 @@ const Projects = () => {
           />
           <CardProjects
             link=""
-            id="1"
+            id="2"
             image="/projects/playnee.png"
             title="Playnee - CRM"
             description="Trabalho atualmente com manutenção de um CRM onde desenvolvo diariamente novas features de um Sistema Web, e um App criado com React Native"
@@ -58,7 +57,7 @@ const Projects = () => {
           />
           <CardProjects
             link=""
-            id="1"
+            id="3"
             image="/projects/tinbolt.png"
             title="Tinbolt - Plantaforma Educacional "
             description="Projeto FullStack onde criei  do zero um app com React Native, crio novas features diariamente em um aplicativo web e manutenção no back-end criado com AdonisJS"

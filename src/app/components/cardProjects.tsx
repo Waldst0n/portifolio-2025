@@ -35,7 +35,8 @@ const CardProjects = ({
   title,
   description,
   technology,
-  link,
+
+  id,
 }: CardProjectsProps) => {
   return (
     <div className="  flex  flex-col p-4 shadow-sm hover:shadow-md shadow-gray-500 border-gray-500  mt-9 items-start text-gray justify-center rounded-lg gap-2 w-full h-auto transition-all hover:bg-gray hover:text-white">
@@ -49,8 +50,7 @@ const CardProjects = ({
           </div>
           <Link
             className=" flex  items-center justify-center rounded-md bg-white text-gray-500 w-32 h-12 font-bold transition-all hover:text-blue-500"
-            href={link}
-            target="_blank"
+            href={`/projectDetails/${id}`}
           >
             Acesse aqui
           </Link>
