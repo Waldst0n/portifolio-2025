@@ -1,7 +1,10 @@
 import { projetos } from "@/app/utils/projectsData";
+import { use } from "react";
 
-export default function Page({ params }: { params: { id: string } }) {
-  const projeto = projetos.find((p) => p.id === params.id);
+export default function Page({ params }: { params: Promise<{ id: string }> }) {
+  // Desembrulha os params usando o hook use
+  const { id } = use(params);
+  const projeto = projetos.find((p) => p.id === id);
 
   if (!projeto) {
     return <div>Projeto não encontrado!</div>;
