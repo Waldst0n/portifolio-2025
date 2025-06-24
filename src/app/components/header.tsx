@@ -32,7 +32,7 @@ const Header = () => {
           </li>
           <li className=" transform transition-transform duration-200 hover:scale-125">
             <a
-              href="https://drive.google.com/file/d/12JaTHGQEhzzewOr56MBFiTZuBjbMxB63/view?usp=sharing"
+              href="https://drive.google.com/file/d/1cuz8ZDQ0ncwpHHWALx5WXy6uFgOQPd-6/view?usp=sharing"
               className="text-lg sm:text-lg font-semibold hover:text-blue-300  "
               target="_blank"
               rel="noopener noreferrer"
