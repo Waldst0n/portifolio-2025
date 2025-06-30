@@ -55,7 +55,7 @@ const CardProjects = ({
             Acesse aqui
           </Link>
         </div>
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <Image
             src={image ?? "/default-image.png"}
             width={150}

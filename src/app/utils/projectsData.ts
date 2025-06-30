@@ -8,10 +8,10 @@ export const projetos = [
     detailDescription:
       "O Smart Minimercado é um minimercado inteligente pensado para facilitar a vida do cliente e modernizar a gestão de pequenos comércios. O cliente pode se cadastrar pelo aplicativo e, a partir desse acesso, navegar pelo catálogo de produtos atualizado, adicionar itens ao carrinho e realizar suas compras de forma totalmente automática, rápida e segura.\n\nA proposta é tornar o processo de compra prático, sem filas e sem complicações, enquanto o gestor do minimercado acompanha tudo em tempo real por meio de um painel administrativo intuitivo. O sistema também permite um controle eficiente de estoque, acompanhamento de vendas e histórico de compras, promovendo uma experiência digital completa para todos os envolvidos.",
     images: [
-      "/projects/smart-minimercado3.mp4",
-      "/projects/smart-minimercado1.png",
-      "/projects/smart-minimercado2.png",
-      "/projects/smart-minimercado4.png",
+      "https://res.cloudinary.com/dkutgs8py/video/upload/v1751227940/smart-minimercado3_fnwmo1.mp4",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227935/smart-minimercado1_pmwqzx.png",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227935/smart-minimercado2_mza64s.png",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227937/smart-minimercado4_jaklpw.png",
     ],
   },
   {

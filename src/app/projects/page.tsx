@@ -26,7 +26,7 @@ const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-screen-xl">
           <CardProjects
             id="1"
-            image="/projects/smart-mini-mercado.png"
+            image="https://res.cloudinary.com/dkutgs8py/image/upload/v1751227934/smart-mini-mercado_aviaq3.png"
             title="Smart Minimercado"
             description="Projeto FullStack onde criei  do zero um app com React Native, um app web para o adminstrador com NextJs e uma Api com Express"
             technology={[
@@ -42,7 +42,7 @@ const Projects = () => {
           <CardProjects
             link=""
             id="2"
-            image="/projects/playnee.png"
+            image="https://res.cloudinary.com/dkutgs8py/image/upload/v1751227931/playnee_hruplb.png"
             title="Playnee - CRM"
             description="Trabalho atualmente com manutenção de um CRM onde desenvolvo diariamente novas features de um Sistema Web, e um App criado com React Native"
             technology={[
@@ -58,7 +58,7 @@ const Projects = () => {
           <CardProjects
             link=""
             id="3"
-            image="/projects/tinbolt.png"
+            image="https://res.cloudinary.com/dkutgs8py/image/upload/v1751227937/tinbolt_xh8vvy.png"
             title="Tinbolt - Plantaforma Educacional "
             description="Projeto FullStack onde criei  do zero um app com React Native, crio novas features diariamente em um aplicativo web e manutenção no back-end criado com AdonisJS"
             technology={[

@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="w-full flex items-center justify-center p-8 ">
       <main
-        className={`flex flex-col md:flex-row items-center justify-center w-full h-full gap-12 transition-opacity duration-1000 ${
+        className={`flex flex-col lg:flex-row items-center justify-center w-full h-full gap-12 transition-opacity duration-1000 ${
           show ? "opacity-100" : "opacity-0"
         }`}
       >
