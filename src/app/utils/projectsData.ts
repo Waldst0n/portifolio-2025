@@ -21,10 +21,10 @@ export const projetos = [
     detailDescription:
       "Atuo como desenvolvedor fullstack no Playnee, uma plataforma de CRM de vendas focada em automação, integração com WhatsApp e inteligência comercial. Sou responsável pela manutenção, evolução e implementação de novas funcionalidades tanto no backend quanto no frontend da solução.",
     images: [
-      "/projects/playnee3.png",
-      "/projects/playnee4.png",
-      "/projects/playnee1.png",
-      "/projects/playnee2.png",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227932/playnee3_aiywjl.png",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227933/playnee4_wysrrq.png",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227932/playnee2_dqyii6.png",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227931/playnee1_sswbbg.png",
     ],
   },
   {
@@ -34,9 +34,9 @@ export const projetos = [
     detailDescription:
       "O Tinbolt é uma plataforma educacional inovadora que visa transformar a experiência de aprendizado. Desenvolvi do zero um aplicativo móvel com React Native, um site para administradores utilizando Next.js e uma API robusta com Express.js. A plataforma permite que os usuários acessem cursos, interajam com conteúdos multimídia e participem de avaliações, tudo em um ambiente intuitivo e responsivo.",
     images: [
-      "/projects/tinbolt3.mp4",
-      "/projects/tinbolt1.png",
-      "/projects/tinbolt2.png",
+      "https://res.cloudinary.com/dkutgs8py/video/upload/v1751227940/tinbolt3_prjn1d.mp4",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227938/tinbolt1_fbwn38.png",
+      "https://res.cloudinary.com/dkutgs8py/image/upload/v1751227939/tinbolt2_cjrfzq.png",
     ],
   },
 ];
