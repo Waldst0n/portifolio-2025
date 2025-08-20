@@ -118,9 +118,11 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                 onClick={(e) => e.stopPropagation()}
               />
             ) : lightbox.img && isGif(lightbox.img) ? (
-              <img
+              <Image
                 src={lightbox.img}
                 alt="Imagem ampliada"
+                width={1200}
+                height={800}
                 className="rounded-lg object-contain shadow-xl"
                 style={{ maxWidth: "90vw", maxHeight: "90vh" }}
                 onClick={(e) => e.stopPropagation()}
