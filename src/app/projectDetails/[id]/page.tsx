@@ -56,12 +56,15 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                           poster="/videos/thumb.jpg" // opcional, caso tenha thumbnail
                         />
                       ) : isGif(media) ? (
-                        <img
+                        <Image
                           src={media}
                           alt={`Imagem do projeto ${projeto.title}`}
+                          width={800}
+                          height={400}
                           className="object-cover rounded-lg"
-                          style={{ width: 800, height: 400 }}
                           loading={index === 0 ? "eager" : "lazy"}
+                          sizes="(max-width: 768px) 100vw, 600px"
+                          priority={index === 0}
                         />
                       ) : (
                         <Image

@@ -10,7 +10,8 @@ import {
 import Image from "next/image";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -95,13 +96,21 @@ export default function Home() {
             colaborar de forma eficiente em equipes dinâmicas.
           </p>
           <div className="flex gap-8 mt-8">
-            <div>
-              <h3 className="text-4xl font-bold">+2</h3>
-              <p>Anos de experiência</p>
+            <div className="hover:bg-white hover:text-gray-600 transition-colors duration-200 p-4 rounded-lg">
+              <Link href="/experience">
+                <h3 className="text-4xl font-bold">+2</h3>
+                <p>Anos de experiência</p>
+              </Link>
             </div>
-            <div>
-              <h3 className="text-4xl font-bold">+40</h3>
-              <p>Projetos no GitHub</p>
+            <div className="hover:bg-white hover:text-gray-600 transition-colors duration-200 p-4 rounded-lg">
+              <a
+                href="https://github.com/Waldst0n"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h3 className="text-4xl font-bold">+40</h3>
+                <p>Projetos no GitHub</p>
+              </a>
             </div>
           </div>
         </div>
