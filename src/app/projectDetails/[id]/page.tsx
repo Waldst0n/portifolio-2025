@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react"; // <-- Não esqueça de importar
+import { use, useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, X } from "lucide-react";
 import { projetos } from "@/app/utils/projectsData";
-import { use } from "react";
-import { isVideo, isGif } from "@/app/utils/common"; // Certifique-se de que este utilitário exista
+import { isGif, isVideo } from "@/app/utils/common";
 
 import {
   Carousel,
@@ -12,138 +14,152 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const projeto = projetos.find((p) => p.id === id);
 
-  // Estado do lightbox
-  const [lightbox, setLightbox] = useState<{
-    open: boolean;
-    img: string | null;
-  }>({ open: false, img: null });
+  const [mounted, setMounted] = useState(false);
+  const [lightbox, setLightbox] = useState<{ open: boolean; img: string | null }>(
+    { open: false, img: null }
+  );
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!projeto) {
-    return <div>Projeto não encontrado!</div>;
+    return (
+      <div className="flex min-h-[60vh] w-full flex-col items-center justify-center gap-6 px-6 text-center">
+        <h1 className="text-3xl font-extrabold">Projeto não encontrado</h1>
+        <p className="text-muted-foreground">
+          O projeto que você procura não existe ou foi removido.
+        </p>
+        <Link
+          href="/projects"
+          className="inline-flex h-11 items-center gap-2 rounded-lg bg-primary px-5 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          <ArrowLeft size={18} />
+          Ver todos os projetos
+        </Link>
+      </div>
+    );
   }
 
   return (
     <>
-      <div className="w-full flex items-center justify-center p-4 md:p-8">
-        <main className="flex flex-col items-center justify-center w-full h-full gap-8 md:gap-12 transition-opacity duration-1000">
-          <h1 className="text-3xl md:text-[70px] text-center font-extrabold leading-none">
-            {projeto.title.toUpperCase()}
-          </h1>
+      <div className="w-full px-6 py-10 sm:py-14">
+        <main
+          className={`mx-auto max-w-4xl transition-all duration-700 ${
+            mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+          }`}
+        >
+          {/* Voltar */}
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          >
+            <ArrowLeft size={16} />
+            Voltar para projetos
+          </Link>
 
-          <div className="w-full flex justify-center">
+          {/* Cabeçalho */}
+          <header className="mt-6">
+            <p className="text-sm font-medium uppercase tracking-wider text-primary">
+              Projeto
+            </p>
+            <h1 className="mt-2 text-4xl font-extrabold leading-tight md:text-5xl">
+              {projeto.title}
+            </h1>
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              {projeto.description}
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {projeto.technology.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </header>
+
+          {/* Galeria */}
+          <div className="mt-10">
             {projeto.images && projeto.images.length > 0 ? (
-              <Carousel className="w-full max-w-[800px] md:max-w-2xl">
+              <Carousel className="w-full">
                 <CarouselContent>
                   {projeto.images.map((media, index) => (
-                    <CarouselItem
-                      key={index}
-                      className="relative w-full aspect-[2/1] flex items-center justify-center cursor-zoom-in"
-                      onClick={() => setLightbox({ open: true, img: media })}
-                      title="Clique para ampliar"
-                    >
-                      {isVideo(media) ? (
-                        <video
-                          src={media}
-                          controls
-                          className="object-cover rounded-lg"
-                          style={{ width: 800, height: 400 }}
-                          poster="/videos/thumb.jpg" // opcional, caso tenha thumbnail
-                        />
-                      ) : isGif(media) ? (
-                        <Image
-                          src={media}
-                          alt={`Imagem do projeto ${projeto.title}`}
-                          width={800}
-                          height={400}
-                          className="object-cover rounded-lg"
-                          loading={index === 0 ? "eager" : "lazy"}
-                          sizes="(max-width: 768px) 100vw, 600px"
-                          priority={index === 0}
-                        />
-                      ) : (
-                        <Image
-                          src={media}
-                          alt={`Imagem do projeto ${projeto.title}`}
-                          width={800}
-                          height={400}
-                          className="object-cover rounded-lg"
-                          sizes="(max-width: 768px) 100vw, 600px"
-                          priority={index === 0}
-                        />
-                      )}
+                    <CarouselItem key={index}>
+                      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border bg-muted">
+                        {isVideo(media) ? (
+                          <video
+                            src={media}
+                            controls
+                            className="absolute inset-0 h-full w-full object-contain"
+                          />
+                        ) : (
+                          <Image
+                            src={media}
+                            alt={`Imagem do projeto ${projeto.title}`}
+                            fill
+                            unoptimized={isGif(media)}
+                            sizes="(max-width: 768px) 100vw, 768px"
+                            priority={index === 0}
+                            onClick={() => setLightbox({ open: true, img: media })}
+                            className="cursor-zoom-in object-contain"
+                          />
+                        )}
+                      </div>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
               </Carousel>
             ) : (
-              <div className="w-full h-[200px] md:h-[400px] flex items-center justify-center text-gray-500">
+              <div className="flex h-[220px] w-full items-center justify-center rounded-xl border border-border bg-muted text-muted-foreground">
                 Sem imagens disponíveis para este projeto.
               </div>
             )}
           </div>
 
-          <section className="w-full max-w-2xl mt-4 space-y-4">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 text-primary">
-              Sobre o projeto
-            </h2>
-            <p className="text-base md:text-lg text-justify leading-relaxed">
-              {projeto.detailDescription}
-            </p>
+          {/* Sobre o projeto */}
+          <section className="mt-10 rounded-xl border border-border bg-card p-6 sm:p-8">
+            <h2 className="text-xl font-bold md:text-2xl">Sobre o projeto</h2>
+            <div className="mt-4 space-y-4 leading-relaxed text-muted-foreground">
+              {projeto.detailDescription.split("\n\n").map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           </section>
         </main>
       </div>
 
       {/* Lightbox */}
-      {lightbox.open && (
+      {lightbox.open && lightbox.img && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
           onClick={() => setLightbox({ open: false, img: null })}
         >
-          <div className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
-            {lightbox.img && isVideo(lightbox.img) ? (
-              <video
-                src={lightbox.img}
-                controls
-                autoPlay
-                className="rounded-lg object-contain shadow-xl"
-                style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-                onClick={(e) => e.stopPropagation()}
-              />
-            ) : lightbox.img && isGif(lightbox.img) ? (
-              <Image
-                src={lightbox.img}
-                alt="Imagem ampliada"
-                width={1200}
-                height={800}
-                className="rounded-lg object-contain shadow-xl"
-                style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-                onClick={(e) => e.stopPropagation()}
-              />
-            ) : (
-              <Image
-                src={lightbox.img ?? ""}
-                alt="Imagem ampliada"
-                width={1200}
-                height={800}
-                className="rounded-lg object-contain shadow-xl"
-                style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-                onClick={(e) => e.stopPropagation()}
-              />
-            )}
+          <div className="relative flex max-h-[90vh] max-w-[90vw] items-center justify-center">
+            <Image
+              src={lightbox.img}
+              alt="Imagem ampliada"
+              width={1400}
+              height={900}
+              unoptimized={isGif(lightbox.img)}
+              className="h-auto max-h-[90vh] w-auto rounded-lg object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
             <button
-              className="absolute top-2 right-2 bg-black bg-opacity-50 rounded-full p-2 text-white text-xl"
+              className="absolute -right-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-background text-foreground shadow-md transition-colors hover:text-primary"
               onClick={() => setLightbox({ open: false, img: null })}
               aria-label="Fechar imagem ampliada"
             >
-              ×
+              <X size={18} />
             </button>
           </div>
         </div>

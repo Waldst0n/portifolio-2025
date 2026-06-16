@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# Portfólio · Waldston Santana
 
-First, run the development server:
+**Desenvolvedor Fullstack** — React · React Native · Next.js · Node.js
+
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+
+[**🔗 Acessar demo ao vivo**](https://portifolio-2025.vercel.app)
+
+</div>
+
+<!-- Dica: adicione um screenshot da home em docs/preview.png e descomente a linha abaixo.
+![Preview do portfólio](docs/preview.png)
+-->
+
+## ✨ Sobre o projeto
+
+Portfólio pessoal desenvolvido para apresentar minha trajetória, habilidades e
+projetos como desenvolvedor Fullstack. Construído com **Next.js (App Router)** e
+**Tailwind CSS v4**, com foco em performance, design clean e acessibilidade.
+
+## 🚀 Funcionalidades
+
+- 🏠 **Home** com apresentação e atalhos de contato (WhatsApp, LinkedIn, GitHub, Instagram)
+- 🧭 **Experiência** — trajetória profissional, formação e habilidades
+- 💼 **Projetos** — vitrine dos principais trabalhos com as tecnologias usadas
+- 🔍 **Detalhes do projeto** — carrossel de imagens/vídeos com _lightbox_ para ampliar
+- 🌗 **Tema claro/escuro** com alternância persistente (sem _flash_ ao carregar)
+- 📱 **Layout responsivo** para mobile, tablet e desktop
+
+## 🛠️ Tecnologias
+
+| Categoria      | Stack                                                        |
+| -------------- | ----------------------------------------------------------- |
+| Framework      | [Next.js 15](https://nextjs.org/) (App Router)              |
+| Linguagem      | [TypeScript](https://www.typescriptlang.org/)               |
+| UI             | [React 18](https://react.dev/)                              |
+| Estilização    | [Tailwind CSS v4](https://tailwindcss.com/)                 |
+| Componentes    | [shadcn/ui](https://ui.shadcn.com/) · [Radix UI](https://www.radix-ui.com/) |
+| Ícones         | [lucide-react](https://lucide.dev/) · [react-icons](https://react-icons.github.io/react-icons/) |
+| Tema           | [next-themes](https://github.com/pacocoursey/next-themes)   |
+| Carrossel      | [Embla Carousel](https://www.embla-carousel.com/)          |
+
+## 📦 Como rodar localmente
+
+> Pré-requisitos: **Node.js 18+** e **npm**.
 
 ```bash
+# 1. Clone o repositório
+git clone https://github.com/Waldst0n/portifolio-2025.git
+cd portifolio-2025
+
+# 2. Instale as dependências
+npm install
+
+# 3. Inicie o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts disponíveis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando         | Descrição                              |
+| --------------- | -------------------------------------- |
+| `npm run dev`   | Inicia o servidor de desenvolvimento   |
+| `npm run build` | Gera a build de produção               |
+| `npm run start` | Executa a build de produção            |
+| `npm run lint`  | Verifica o código com o ESLint         |
 
-## Learn More
+## 🗂️ Estrutura do projeto
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── components/        # Header, ThemeProvider, ThemeToggle, CardProjects
+│   ├── experience/        # Página de experiência
+│   ├── projects/          # Vitrine de projetos
+│   ├── projectDetails/    # Detalhes de um projeto ([id])
+│   ├── utils/             # Dados dos projetos e helpers
+│   ├── globals.css        # Tokens de tema (light/dark) e estilos base
+│   └── layout.tsx         # Layout raiz + metadados + provider de tema
+├── components/ui/         # Componentes shadcn/ui (card, button, carousel...)
+├── lib/                   # Utilitários (cn)
+└── types/                 # Tipagens compartilhadas
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📬 Contato
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 💼 [LinkedIn](https://www.linkedin.com/in/waldston-santana/)
+- 🐙 [GitHub](https://github.com/Waldst0n)
+- 💬 [WhatsApp](https://wa.me/5579988232693)
+- 📸 [Instagram](https://instagram.com/waldstonsantana)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+Feito com 💙 por <a href="https://github.com/Waldst0n">Waldston Santana</a>
+</div>
