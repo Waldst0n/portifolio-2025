@@ -130,7 +130,7 @@ export default function Home() {
                 <ArrowRight size={18} />
               </Link>
               <a
-                href="https://drive.google.com/file/d/1cuz8ZDQ0ncwpHHWALx5WXy6uFgOQPd-6/view?usp=sharing"
+                href="https://drive.google.com/file/d/1rAkb50Fl5UjSzXMZr16nBaGYeSMjDMCz/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-border px-6 font-semibold text-foreground transition-colors hover:bg-muted"
