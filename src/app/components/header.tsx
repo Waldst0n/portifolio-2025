@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/experience", label: "Experiência" },
   { href: "/projects", label: "Projetos" },
   {
-    href: "https://drive.google.com/file/d/1CEXykGvJAiF1Ljg0LDkTa2AUr0_xyjCk/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1CEXykGvJAiF1Ljg0LDkTa2AUr0_xyjCk/preview",
     label: "Currículo",
     external: true,
   },
